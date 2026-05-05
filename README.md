@@ -1,8 +1,38 @@
+
 # Spell Chess — Game Specification
 
 Spell Chess is standard chess with two additions: each player has access to a **Freeze** spell and a **Jump** spell.
 
 ---
+
+
+## Test Results Summary for P4
+
+The unit test suite was executed using `pytest` to verify the current Spell Chess implementation against the approved specification.
+
+### Test Command
+
+```bash
+python3 -m pytest test_spell_logic.py -v
+```
+### Overall results
+| Total Tests | Passed | Failed |
+| ----------- | ------ | ------ |
+|          79 |     49 |     30 |
+
+The full test suite collected 79 tests. Of these, 49 passed and 30 failed. The failed tests indicate defects in the current implementation that should be documented and fixed in future iterations.
+
+### Test Group Summary
+
+| Test Group           | Total Tests | Passed | Failed | Summary                                                                                                              |
+| -------------------- | ----------- | ------ | -------| -------------------------------------------------------------------------------------------------------------------- |
+| Freeze Demo Tests    |           2 |      0 |      2 | Provided example tests failed for Freeze targeting and board reset.                                                  |
+| Freeze Tests         |          29 |     14 |     15 | Failures found in Freeze targeting, 3x3 area, charges, cooldown, duration, and lifecycle behavior.                   |
+| Jump Tests           |          21 |     15 |      6 | Failures found in Jump range, King restriction, occupied destination handling, cooldown, timing, and reset behavior. |
+| Standard Chess Tests |          12 |      9 |      3 | Failures found in turn switching, en passant, and Knight promotion.                                                  |
+| Display Tests        |           8 |      8 |      0 | All display-related tests passed.                                                                                    |
+| Reset Tests          |           8 |      5 |      3 | Failures found in board reset, move history reset, and turn reset.                                                   |
+
 
 ## Your Task
 
